@@ -1,0 +1,40 @@
+'.source.js':
+  'module.exports = ($1) => {$2};':
+    'prefix': 'me'
+    'body': 'module.exports = ($1) => {$2};'
+  'const $1 = require(\'$2\')':
+    'prefix': 'cre'
+    'body': 'const $1 = require(\'$2\');'
+  'const _ = require(\'loash\');':
+    'prefix': 'rlo'
+    'body': 'const _ = require(\'lodash\');'
+  'const co = require(\'co\');':
+    'prefix': 'rco'
+    'body': 'const co = require(\'co\');'
+  'const fs = require(\'fs\');':
+    'prefix': 'rfs'
+    'body': 'const fs = require(\'fs\');'
+  'const fs = require(\'fs-extra\');':
+    'prefix': 'rfse'
+    'body': 'const fs = require(\'fs-extra\');'
+  'const path = require(\'path\');':
+    'prefix': 'rpa'
+    'body': 'const path = require(\'path\');'
+  'const url = require(\'url\');':
+    'prefix': 'rurl'
+    'body': 'const url = require(\'url\');'
+  'const CWD = process.cwd();':
+    'prefix': 'rcwd'
+    'body': 'const CWD = process.cwd();'
+  'const HOME = process.env.HOME;':
+    'prefix': 'rhome'
+    'body': 'const HOME = process.env.HOME;'
+  'const spawn = require(\'child_process\').spawn;':
+    'prefix': 'rspawn'
+    'body': 'const spawn = require(\'child_process\').spawn;'
+  'const spawnSync = require(\'child_process\').spawnSync;':
+    'prefix': 'rspawns'
+    'body': 'const spawnSync = require(\'child_process\').spawnSync;'
+  'const exec = require(\'child_process\').exec;':
+    'prefix': 'rexec'
+    'body': 'const exec = require(\'child_process\').exec;'
