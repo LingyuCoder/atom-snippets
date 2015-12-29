@@ -1,22 +1,52 @@
 '.source.js':
-  'module.exports = ($1) => {$2};':
-    'prefix': 'me'
-    'body': 'module.exports = ($1) => {$2};'
+  # 定式用法
+  'new Promise((resolve, reject) => {$1})':
+    'prefix': 'promise'
+    'body': 'new Promise((resolve, reject) => {$1})'
+  '_.curryRight(co.wrap(function*($1) {$2}), $3);':
+    'prefix': 'curcow'
+    'body': '_.curryRight(co.wrap(function*($1) {$2}), $3);'
+  '_.curry(co.wrap(function*($1) {$2}), $3);':
+    'prefix': 'culcow'
+    'body': '_.curry(co.wrap(function*($1) {$2}), $3);'
+  '_.curryRight(($1) => {$2});':
+    'prefix': 'cur'
+    'body': '_.curryRight(($1) => {$2});'
+  '_.curry(($1) => {$2});':
+    'prefix': 'cul'
+    'body': '_.curry(($1) => {$2});'
+  'co.wrap(function*($1) {$2})':
+    'prefix': 'cow'
+    'body': 'co.wrap(function*($1) {$2})'
+  'co(function*($1) {$2})':
+    'prefix': 'cof'
+    'body': 'co(function*($1) {$2})'
   'const $1 = require(\'$2\')':
     'prefix': 'cre'
     'body': 'const $1 = require(\'$2\');'
-  'const _ = require(\'loash\');':
+  'module.exports = ($1) => {$2};':
+    'prefix': 'me'
+    'body': 'module.exports = ($1) => {$2};'
+  # 常用非原生依赖
+  'require(\'should\');':
+    'prefix': 'rsh'
+    'body': 'require(\'should\');'
+  'require(\'colors\');':
+    'prefix': 'rco'
+    'body': 'require(\'colors\');'
+  'const _ = require(\'lodash\');':
     'prefix': 'rlo'
     'body': 'const _ = require(\'lodash\');'
   'const co = require(\'co\');':
     'prefix': 'rco'
     'body': 'const co = require(\'co\');'
-  'const fs = require(\'fs\');':
-    'prefix': 'rfs'
-    'body': 'const fs = require(\'fs\');'
   'const fs = require(\'fs-extra\');':
     'prefix': 'rfse'
     'body': 'const fs = require(\'fs-extra\');'
+  # 常用原生依赖
+  'const fs = require(\'fs\');':
+    'prefix': 'rfs'
+    'body': 'const fs = require(\'fs\');'
   'const path = require(\'path\');':
     'prefix': 'rpa'
     'body': 'const path = require(\'path\');'
@@ -29,6 +59,9 @@
   'const HOME = process.env.HOME;':
     'prefix': 'rhome'
     'body': 'const HOME = process.env.HOME;'
+  'const pkg = require(path.join(process.cwd(), \'packge.json\'));':
+    'prefix': 'rpkg'
+    'body': 'const pkg = require(path.join(process.cwd(), \'packge.json\'));'
   'const spawn = require(\'child_process\').spawn;':
     'prefix': 'rspawn'
     'body': 'const spawn = require(\'child_process\').spawn;'
