@@ -1,0 +1,89 @@
+'.source.jsx':
+  'const React = require()':
+    'prefix': 'req-react'
+    'body': 'const React = require(\'$1\')'
+  'type-description':
+    'prefix': 'typed'
+    'body': """
+    /**
+     * $1
+     */
+    """
+  'this.funcname = this.funcname.bind(this);':
+    'prefix': 'binder'
+    'body': 'this.${1:name} = this.${1:name}.bind(this);'
+  'react-es6-class':
+    'prefix': 'class6'
+    'body': """
+    class ${1:name} extends React.Component {
+      constructor() {
+        super();
+      }
+      render() {
+        $2
+      }
+    }
+    ${1:name}.displayName = '${1:name}';
+    ${1:name}.propTypes = {};
+    ${1:name}.defaultProps = {};
+    module.exports = ${1:name};
+    """
+  'react-es5-class':
+    'prefix': 'class5'
+    'body': """
+    var ${1:name} = React.createClass({
+      displayName: '${1:name}',
+      propTypes: {},
+      defaultProps: {},
+      render: function() {
+        return (${2});
+      }
+    });
+    module.exports = ${1:name};
+    """
+  'innerhtml':
+    'prefix': 'innerhtml'
+    'body': 'dangerouslySetInnerHTML={{__html: $1}}'
+  'React.Proptypes.string':
+    'prefix': 'types'
+    'body': 'React.PropTypes.string'
+  'React.Proptypes.number':
+    'prefix': 'typen'
+    'body': 'React.PropTypes.number'
+  'React.Proptypes.object':
+    'prefix': 'typeo'
+    'body': 'React.PropTypes.object'
+  'React.Proptypes.bool':
+    'prefix': 'typeb'
+    'body': 'React.PropTypes.bool'
+  'React.Proptypes.func':
+    'prefix': 'typef'
+    'body': 'React.PropTypes.func'
+  'React.Proptypes.array':
+    'prefix': 'typea'
+    'body': 'React.PropTypes.array'
+  'React.Proptypes.shape':
+    'prefix': 'typesh'
+    'body': """
+    React.PropTypes.shape({
+      $1
+    })
+    """
+  'React.Proptypes.any':
+    'prefix': 'typeany'
+    'body': 'React.PropTypes.any'
+  'React.Proptypes.arrayOf':
+    'prefix': 'typeaf'
+    'body': 'React.PropTypes.arrayOf($1)'
+  'React.Proptypes.node':
+    'prefix': 'typeno'
+    'body': 'React.PropTypes.node'
+  'React.Proptypes.element':
+    'prefix': 'typee'
+    'body': 'React.PropTypes.element'
+  'React.Proptypes.oneOf':
+    'prefix': 'typeof'
+    'body': 'React.PropTypes.oneOf([$1])'
+  'React.Proptypes.oneOfType':
+    'prefix': 'typeoft'
+    'body': 'React.PropTypes.oneOfType([$1])'
