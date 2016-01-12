@@ -1,6 +1,6 @@
 '.source.jsx':
   'const React = require()':
-    'prefix': 'req-react'
+    'prefix': 'reqreact'
     'body': 'const React = require(\'$1\')'
   'type-description':
     'prefix': 'typed'
