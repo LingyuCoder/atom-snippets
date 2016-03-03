@@ -1,16 +1,77 @@
 '.source.jsx':
+  'this.state.$1':
+    'prefix': 'sta',
+    'body': 'this.state.$1'
+  'this.props.$1':
+    'prefix': 'prop',
+    'body': 'this.props.$1'
+  'this.setState($1)':
+    'prefix': 'ssta',
+    'body': 'this.setState($1)'
+  'componentWillMount':
+    'prefix': 'cwm'
+    'body': """
+    componentWillMount() {
+      $1
+    }
+    """
+  'componentDidMount':
+    'prefix': 'cdm'
+    'body': """
+    componentDidMount() {
+      $1
+    }
+    """
+  'componentWillReceiveProps':
+    'prefix': 'cwrp'
+    'body': """
+    componentWillReceiveProps() {
+      $1
+    }
+    """
+  'shouldComponentUpdate':
+    'prefix': 'scu'
+    'body': """
+    shouldComponentUpdate() {
+      $1
+    }
+    """
+  'componentWillUpdate':
+    'prefix': 'cwu'
+    'body': """
+    componentWillUpdate() {
+      $1
+    }
+    """
+  'componentDidUpdate':
+    'prefix': 'cdu'
+    'body': """
+    componentDidUpdate() {
+      $1
+    }
+    """
+  'componentWillUnmount':
+    'prefix': 'cdun'
+    'body': """
+    componentWillUnmount() {
+      $1
+    }
+    """
   'const React = require()':
-    'prefix': 'reqreact'
+    'prefix': 'reqr'
     'body': 'const React = require(\'$1\')'
+  'const ReactDOM = require()':
+    'prefix': 'reqrd'
+    'body': 'const ReactDOM = require(\'$1\')'
   'type-description':
-    'prefix': 'typed'
+    'prefix': 'td'
     'body': """
     /**
      * $1
      */
     """
   'this.funcname = this.funcname.bind(this);':
-    'prefix': 'binder'
+    'prefix': 'bind'
     'body': 'this.${1:name} = this.${1:name}.bind(this);'
   'react-es6-class':
     'prefix': 'class6'
@@ -45,45 +106,48 @@
     'prefix': 'innerhtml'
     'body': 'dangerouslySetInnerHTML={{__html: $1}}'
   'React.Proptypes.string':
-    'prefix': 'types'
+    'prefix': 'ts'
     'body': 'React.PropTypes.string'
   'React.Proptypes.number':
-    'prefix': 'typen'
+    'prefix': 'tn'
     'body': 'React.PropTypes.number'
   'React.Proptypes.object':
-    'prefix': 'typeo'
+    'prefix': 'to'
     'body': 'React.PropTypes.object'
   'React.Proptypes.bool':
-    'prefix': 'typeb'
+    'prefix': 'tb'
     'body': 'React.PropTypes.bool'
   'React.Proptypes.func':
-    'prefix': 'typef'
+    'prefix': 'tf'
     'body': 'React.PropTypes.func'
   'React.Proptypes.array':
-    'prefix': 'typea'
+    'prefix': 'ta'
     'body': 'React.PropTypes.array'
   'React.Proptypes.shape':
-    'prefix': 'typesh'
+    'prefix': 'tsh'
     'body': """
     React.PropTypes.shape({
       $1
     })
     """
   'React.Proptypes.any':
-    'prefix': 'typeany'
+    'prefix': 'tany'
     'body': 'React.PropTypes.any'
   'React.Proptypes.arrayOf':
-    'prefix': 'typeaf'
+    'prefix': 'taf'
     'body': 'React.PropTypes.arrayOf($1)'
   'React.Proptypes.node':
-    'prefix': 'typeno'
+    'prefix': 'tno'
     'body': 'React.PropTypes.node'
   'React.Proptypes.element':
-    'prefix': 'typee'
+    'prefix': 'te'
     'body': 'React.PropTypes.element'
   'React.Proptypes.oneOf':
-    'prefix': 'typeof'
+    'prefix': 'tof'
     'body': 'React.PropTypes.oneOf([$1])'
   'React.Proptypes.oneOfType':
-    'prefix': 'typeoft'
+    'prefix': 'toft'
     'body': 'React.PropTypes.oneOfType([$1])'
+  'React.Proptypes.instanceOf':
+    'prefix': 'ti'
+    'body': 'React.PropTypes.instanceOf($1)'
