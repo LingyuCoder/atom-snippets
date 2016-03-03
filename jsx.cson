@@ -1,81 +1,122 @@
 '.source.jsx':
+  'React.Children.map':
+    prefix: 'childm',
+    body: """
+    React.Children.map(${1:this.props.children}, child => {
+      $2
+    });
+    """
+  'React.Children.forEach':
+    prefix: 'childfe',
+    body: """
+    React.Children.forEach(${1:this.props.children}, child => {
+      $2
+    });
+    """
+  'React.Children.count':
+    prefix: 'childc',
+    body: 'React.Children.count(${1:this.props.children});'
+  'React.Children.only':
+    prefix: 'childo',
+    body: 'React.Children.only(${1:this.props.children});'
+  'React.Children.toArray':
+    prefix: 'childa',
+    body: 'React.Children.toArray(${1:this.props.children});'
+  'render':
+    prefix: 'render',
+    body: 'ReactDOM.render($1, $2)'
+  'unmountComponentAtNode':
+    prefix: 'unmount',
+    body: 'ReactDOM.unmountComponentAtNode($1)'
+  'findDOMNode()':
+    prefix: 'findDOMNode',
+    body: 'ReactDOM.findDOMNode(${1:this})'
   'this.state.$1':
-    'prefix': 'sta',
-    'body': 'this.state.$1'
+    prefix: 'sta',
+    body: 'this.state.$1'
   'this.props.$1':
-    'prefix': 'prop',
-    'body': 'this.props.$1'
+    prefix: 'prop',
+    body: 'this.props.$1'
   'this.setState($1)':
-    'prefix': 'ssta',
-    'body': 'this.setState($1)'
+    prefix: 'ssta',
+    body: 'this.setState($1)'
   'componentWillMount':
-    'prefix': 'cwm'
-    'body': """
+    prefix: 'cwm'
+    body: """
     componentWillMount() {
       $1
     }
     """
   'componentDidMount':
-    'prefix': 'cdm'
-    'body': """
+    prefix: 'cdm'
+    body: """
     componentDidMount() {
       $1
     }
     """
   'componentWillReceiveProps':
-    'prefix': 'cwrp'
-    'body': """
+    prefix: 'cwrp'
+    body: """
     componentWillReceiveProps() {
       $1
     }
     """
   'shouldComponentUpdate':
-    'prefix': 'scu'
-    'body': """
+    prefix: 'scu'
+    body: """
     shouldComponentUpdate() {
       $1
     }
     """
   'componentWillUpdate':
-    'prefix': 'cwu'
-    'body': """
+    prefix: 'cwu'
+    body: """
     componentWillUpdate() {
       $1
     }
     """
   'componentDidUpdate':
-    'prefix': 'cdu'
-    'body': """
+    prefix: 'cdu'
+    body: """
     componentDidUpdate() {
       $1
     }
     """
   'componentWillUnmount':
-    'prefix': 'cdun'
-    'body': """
+    prefix: 'cdun'
+    body: """
     componentWillUnmount() {
       $1
     }
     """
-  'const React = require()':
-    'prefix': 'reqr'
-    'body': 'const React = require(\'$1\')'
+  'import React from \'$1\'':
+    prefix: 'impr'
+    body: 'import React from \'${1:react}\''
+  'import ReactDOM from \'$1\'':
+    prefix: 'imprd'
+    body: 'import ReactDOM from \'${1:react-dom}\''
   'const ReactDOM = require()':
-    'prefix': 'reqrd'
-    'body': 'const ReactDOM = require(\'$1\')'
+    prefix: 'reqrd'
+    body: 'const ReactDOM = require(\'${1:react-dom}\')'
+  'const React = require()':
+    prefix: 'reqr'
+    body: 'const React = require(\'${1:react}\')'
+  'const ReactDOM = require()':
+    prefix: 'reqrd'
+    body: 'const ReactDOM = require(\'${1:react-dom}\')'
   'type-description':
-    'prefix': 'td'
-    'body': """
+    prefix: 'td'
+    body: """
     /**
      * $1
      */
     """
   'this.funcname = this.funcname.bind(this);':
-    'prefix': 'bind'
-    'body': 'this.${1:name} = this.${1:name}.bind(this);'
+    prefix: 'bind'
+    body: 'this.${1:name} = this.${1:name}.bind(this);'
   'react-es6-class':
-    'prefix': 'class6'
-    'body': """
+    prefix: 'class6'
+    body: """
     class ${1:name} extends React.Component {
       constructor() {
         super();
@@ -90,8 +131,8 @@
     module.exports = ${1:name};
     """
   'react-es5-class':
-    'prefix': 'class5'
-    'body': """
+    prefix: 'class5'
+    body: """
     var ${1:name} = React.createClass({
       displayName: '${1:name}',
       propTypes: {},
@@ -103,51 +144,51 @@
     module.exports = ${1:name};
     """
   'innerhtml':
-    'prefix': 'innerhtml'
-    'body': 'dangerouslySetInnerHTML={{__html: $1}}'
+    prefix: 'innerhtml'
+    body: 'dangerouslySetInnerHTML={{__html: $1}}'
   'React.Proptypes.string':
-    'prefix': 'ts'
-    'body': 'React.PropTypes.string'
+    prefix: 'ts'
+    body: 'React.PropTypes.string'
   'React.Proptypes.number':
-    'prefix': 'tn'
-    'body': 'React.PropTypes.number'
+    prefix: 'tn'
+    body: 'React.PropTypes.number'
   'React.Proptypes.object':
-    'prefix': 'to'
-    'body': 'React.PropTypes.object'
+    prefix: 'to'
+    body: 'React.PropTypes.object'
   'React.Proptypes.bool':
-    'prefix': 'tb'
-    'body': 'React.PropTypes.bool'
+    prefix: 'tb'
+    body: 'React.PropTypes.bool'
   'React.Proptypes.func':
-    'prefix': 'tf'
-    'body': 'React.PropTypes.func'
+    prefix: 'tf'
+    body: 'React.PropTypes.func'
   'React.Proptypes.array':
-    'prefix': 'ta'
-    'body': 'React.PropTypes.array'
+    prefix: 'ta'
+    body: 'React.PropTypes.array'
   'React.Proptypes.shape':
-    'prefix': 'tsh'
-    'body': """
+    prefix: 'tsh'
+    body: """
     React.PropTypes.shape({
       $1
     })
     """
   'React.Proptypes.any':
-    'prefix': 'tany'
-    'body': 'React.PropTypes.any'
+    prefix: 'tany'
+    body: 'React.PropTypes.any'
   'React.Proptypes.arrayOf':
-    'prefix': 'taf'
-    'body': 'React.PropTypes.arrayOf($1)'
+    prefix: 'taf'
+    body: 'React.PropTypes.arrayOf($1)'
   'React.Proptypes.node':
-    'prefix': 'tno'
-    'body': 'React.PropTypes.node'
+    prefix: 'tno'
+    body: 'React.PropTypes.node'
   'React.Proptypes.element':
-    'prefix': 'te'
-    'body': 'React.PropTypes.element'
+    prefix: 'te'
+    body: 'React.PropTypes.element'
   'React.Proptypes.oneOf':
-    'prefix': 'tof'
-    'body': 'React.PropTypes.oneOf([$1])'
+    prefix: 'tof'
+    body: 'React.PropTypes.oneOf([$1])'
   'React.Proptypes.oneOfType':
-    'prefix': 'toft'
-    'body': 'React.PropTypes.oneOfType([$1])'
+    prefix: 'toft'
+    body: 'React.PropTypes.oneOfType([$1])'
   'React.Proptypes.instanceOf':
-    'prefix': 'ti'
-    'body': 'React.PropTypes.instanceOf($1)'
+    prefix: 'ti'
+    body: 'React.PropTypes.instanceOf($1)'
